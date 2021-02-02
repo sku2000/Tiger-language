@@ -1,0 +1,39 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",   
+                "map.c",     
+                "vector.c",
+                "set.c",        
+                "errormsg.c",
+                "lex.c",
+                "parser.c",
+                "utils.c",
+                "semantic.c",
+                "frame.c",
+                "asm.c",
+                "tiger.c",                  
+                "-o",
+                "a.exe"
+            ],      
+            "group": {
+                "kind": "build",
+                "isDefault": true // 不为true时ctrl shift B就要手动选择了
+            },      
+            "presentation": {
+                "echo": true,
+                "reveal": "always", // 执行任务时是否跳转到终端面板，可以为always，silent，never。具体参见VSC的文档
+                "focus": false,     // 设为true后可以使执行task时焦点聚集在终端，但对编译C/C++来说，设为true没有意义
+                "panel": "shared"   // 不同的文件的编译信息共享一个终端面板
+            },
+            "problemMatcher" :"$gcc"
+        }
+    ]
+}

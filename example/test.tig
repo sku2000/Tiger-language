@@ -1,0 +1,6 @@
+let 
+    var a := 1+2
+in
+    a := a + 1;
+    a;
+end
